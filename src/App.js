@@ -12,8 +12,10 @@ function App() {
   };
 
   const validateUrl = (url) => {
-    // implement validation
-    return true;
+    const pattern = new RegExp(
+      /^(http(s)?:\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/g
+    );
+    return url.trim() !== '' && pattern.test(url);
   };
 
   const handleSubmit = async (e) => {
